@@ -34,7 +34,7 @@ $$P(\flist{e}{n}) = n!\frac{1}{N}\frac{1}{N-1}\cdots{}\frac{1}{N-(n-1)} = { N \c
     
 This is a simple random sample.
 
-## When you encounter the population sequentually, $N$ not known
+## When you encounter the population sequentially, $N$ not known
 
 1. Select the first $n$ elements to be in your "temporary" sample
 2. Then when you encounter the $k^{th}$ element out of $n+1,\, n+2,\,\ldots$, do one of the following:
@@ -49,10 +49,10 @@ This is also a simple random sample (from the "population" of those elements you
 
 * Each of the $y_i$ have the *same* distribution.
     + Name: *discrete uniform distribution over $\flist{y}{N}$.*
-    + $\E{y_i} =  \sum_{i=1} y_i \frac{1}{N} = \mu$
-    + $V(y_i) = \sum_{i=1} (y_i - \mu)^2 \frac{1}{N} = \sigma^2$
+    + $\E{y_i} =  \sum_{j=1}^N y_j \frac{1}{N} = \mu$
+    + $V(y_i) = \sum_{j=1}^N (y_j - \mu)^2 \frac{1}{N} = \sigma^2$
     
-* But they are *not* independent random variables. In particular:
+* But they are *not* independent random variables. In particular (for $i\ne j$):
 $$Cov(y_i, y_j) = -\frac{1}{N-1}\sigma^2$$
 
 ## the details---"identically distributed"
@@ -63,10 +63,11 @@ This is a "theorem"---the proof would be based on symmetry, from the fact that t
 
 ## the details---"mean and variance"
 
-The following results follow immediately from the previous slide:
+The following "theorems" then actually follow immediately from the previous slide:
 
-*$\E{y_i} =  \sum_{i=1} y_i \frac{1}{N} = \mu$
-*$V(y_i) = \sum_{i=1} (y_i - \mu)^2 \frac{1}{N} = \sigma^2$
+$\E{y_i} =  \sum_{j=1}^N y_j \frac{1}{N} = \mu$
+
+$V(y_i) = \sum_{j=1}^N (y_j - \mu)^2 \frac{1}{N} = \sigma^2$
 
 These results look suspiciously like these *definititions* from last week, but are completely different in character:
 
@@ -77,7 +78,7 @@ These results look suspiciously like these *definititions* from last week, but a
 
 > But $y_i$ and $y_j$ are obviously not independent. 
 
-> For example, $P(y_1 = y) = \frac{1}{N}$. But $P(y_1 = y\,|\, y_2) = \frac{1}{N-1}$ for $y_1 \ne y$. 
+> For example, $P(y_1 = y) = \frac{1}{N}$. But $P(y_1 = y\,|\, y_2 = y^\prime) = \frac{1}{N-1}$ for $y \ne y^\prime$. 
 
 > The derivation of $Cov(y_i, y_j) = -\frac{1}{N-1}\sigma^2$ is tricky, dull, and contained the textbook appendix. 
 
@@ -85,9 +86,9 @@ These results look suspiciously like these *definititions* from last week, but a
 
 ## how to estimate the population parameters { .build }
 
-> So we have our unknown $\tau$ and $\mu$ (and $\sigma^2$) and we have a sample $\flist{y}{n}$ whose properties we have established. 
+> So we have our unknown $\tau$ and $\mu$ (and $\sigma^2$) and we have a sample $\flist{y}{n}$ some of whose properties we have established. 
 
-> How shall we use the sample to estimate the unknown paramaters? We'll go with an obvious choices for $\mu$ and $\tau$ which are: $$\hat\mu = \bar{y} = \frac{1}{n}\sum_{i=1}^n y_i \qquad \text{and} \qquad \hat\tau = N\hat\mu = N\bar{y} = \frac{N}{n}\sum_{i=1}^n y_i $$ 
+> How shall we use the sample to estimate the unknown paramaters? We'll go with obvious choices for $\mu$ and $\tau$ which are: $$\hat\mu = \bar{y} = \frac{1}{n}\sum_{i=1}^n y_i \qquad \text{and} \qquad \hat\tau = N\hat\mu = N\bar{y} = \frac{N}{n}\sum_{i=1}^n y_i $$ 
 
 > We'll get to $\sigma^2$.
 
@@ -101,7 +102,7 @@ The *distribution* $\bar{y}$ is also discrete uniform, but this isn't so helpful
 
 Instead we can use properties of $E(\cdot)$ and $V(\cdot)$ (reviewed last week) to obtain first: $$\E{\bar{y}} = \frac{1}{n} \sum_{i=1}^n \E{y_i} = \frac{1}{n} n\mu = \mu$$
 
-So we say $\bar{y}$ is *unbiased* for $\mu$. (In fact: \bar{y} is the *only* unbiased estimator under SRS.) 
+So we say $\bar{y}$ is *unbiased* for $\mu$. (In fact: $\bar{y}$ is the *only* unbiased estimator under SRS.) 
 
 ## properties of $\bar{y}$
 

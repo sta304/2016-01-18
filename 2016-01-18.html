@@ -124,7 +124,7 @@
 
 <p>This is a simple random sample.</p>
 
-</article></slide><slide class=''><hgroup><h2>When you encounter the population sequentually, \(N\) not known</h2></hgroup><article  id="when-you-encounter-the-population-sequentually-n-not-known">
+</article></slide><slide class=''><hgroup><h2>When you encounter the population sequentially, \(N\) not known</h2></hgroup><article  id="when-you-encounter-the-population-sequentially-n-not-known">
 
 <ol>
 <li>Select the first \(n\) elements to be in your &quot;temporary&quot; sample</li>
@@ -146,10 +146,10 @@
 
 <ul>
 <li>Name: <em>discrete uniform distribution over \({\{y_1, y_2, \ldots, y_N\}}\).</em></li>
-<li>\({E{\left(y_i\right)}} = \sum_{i=1} y_i \frac{1}{N} = \mu\)</li>
-<li>\(V(y_i) = \sum_{i=1} (y_i - \mu)^2 \frac{1}{N} = \sigma^2\)</li>
+<li>\({E{\left(y_i\right)}} = \sum_{j=1}^N y_j \frac{1}{N} = \mu\)</li>
+<li>\(V(y_i) = \sum_{j=1}^N (y_j - \mu)^2 \frac{1}{N} = \sigma^2\)</li>
 </ul></li>
-<li><p>But they are <em>not</em> independent random variables. In particular: \[Cov(y_i, y_j) = -\frac{1}{N-1}\sigma^2\]</p></li>
+<li><p>But they are <em>not</em> independent random variables. In particular (for \(i\ne j\)): \[Cov(y_i, y_j) = -\frac{1}{N-1}\sigma^2\]</p></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>the details&#8212;&quot;identically distributed&quot;</h2></hgroup><article  id="the-details---identically-distributed">
@@ -160,9 +160,11 @@
 
 </article></slide><slide class=''><hgroup><h2>the details&#8212;&quot;mean and variance&quot;</h2></hgroup><article  id="the-details---mean-and-variance">
 
-<p>The following results follow immediately from the previous slide:</p>
+<p>The following &quot;theorems&quot; then actually follow immediately from the previous slide:</p>
 
-<p><em>\({E{\left(y_i\right)}} = \sum_{i=1} y_i \frac{1}{N} = \mu\) </em>\(V(y_i) = \sum_{i=1} (y_i - \mu)^2 \frac{1}{N} = \sigma^2\)</p>
+<p>\({E{\left(y_i\right)}} = \sum_{j=1}^N y_j \frac{1}{N} = \mu\)</p>
+
+<p>\(V(y_i) = \sum_{j=1}^N (y_j - \mu)^2 \frac{1}{N} = \sigma^2\)</p>
 
 <p>These results look suspiciously like these <em>definititions</em> from last week, but are completely different in character:</p>
 
@@ -178,7 +180,7 @@
 </blockquote>
 
 <blockquote>
-<p>For example, \(P(y_1 = y) = \frac{1}{N}\). But \(P(y_1 = y\,|\, y_2) = \frac{1}{N-1}\) for \(y_1 \ne y\).</p>
+<p>For example, \(P(y_1 = y) = \frac{1}{N}\). But \(P(y_1 = y\,|\, y_2 = y^\prime) = \frac{1}{N-1}\) for \(y \ne y^\prime\).</p>
 </blockquote>
 
 <blockquote>
@@ -192,11 +194,11 @@
 </article></slide><slide class=''><hgroup><h2>how to estimate the population parameters</h2></hgroup><article  id="how-to-estimate-the-population-parameters" class="build">
 
 <blockquote>
-<p>So we have our unknown \(\tau\) and \(\mu\) (and \(\sigma^2\)) and we have a sample \({\{y_1, y_2, \ldots, y_n\}}\) whose properties we have established.</p>
+<p>So we have our unknown \(\tau\) and \(\mu\) (and \(\sigma^2\)) and we have a sample \({\{y_1, y_2, \ldots, y_n\}}\) some of whose properties we have established.</p>
 </blockquote>
 
 <blockquote>
-<p>How shall we use the sample to estimate the unknown paramaters? We&#39;ll go with an obvious choices for \(\mu\) and \(\tau\) which are: \[\hat\mu = {\overline{y}} = \frac{1}{n}\sum_{i=1}^n y_i \qquad \text{and} \qquad \hat\tau = N\hat\mu = N{\overline{y}} = \frac{N}{n}\sum_{i=1}^n y_i \]</p>
+<p>How shall we use the sample to estimate the unknown paramaters? We&#39;ll go with obvious choices for \(\mu\) and \(\tau\) which are: \[\hat\mu = {\overline{y}} = \frac{1}{n}\sum_{i=1}^n y_i \qquad \text{and} \qquad \hat\tau = N\hat\mu = N{\overline{y}} = \frac{N}{n}\sum_{i=1}^n y_i \]</p>
 </blockquote>
 
 <blockquote>
@@ -215,7 +217,7 @@
 
 <p>Instead we can use properties of \(E(\cdot)\) and \(V(\cdot)\) (reviewed last week) to obtain first: \[{E{\left({\overline{y}}\right)}} = \frac{1}{n} \sum_{i=1}^n {E{\left(y_i\right)}} = \frac{1}{n} n\mu = \mu\]</p>
 
-<p>So we say \({\overline{y}}\) is <em>unbiased</em> for \(\mu\). (In fact: {y} is the <em>only</em> unbiased estimator under SRS.)</p>
+<p>So we say \({\overline{y}}\) is <em>unbiased</em> for \(\mu\). (In fact: \({\overline{y}}\) is the <em>only</em> unbiased estimator under SRS.)</p>
 
 </article></slide><slide class=''><hgroup><h2>properties of \({\overline{y}}\)</h2></hgroup><article  id="properties-of-overliney-1">
 
